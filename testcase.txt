@@ -1,0 +1,633 @@
+Testcases
+=========
+
+>>Test for proxy server
+
+*************************************************
+
+>>Here are some test cases used in testing different methods and functional blocks.
+>>Please be aware of the config options may differ in various browsers and the hidden operations (like security related checking, amazon trust or Mozilla service) might be called during the process in the proxy.
+
+*************************************************
+CONNECT
+-------
+https://people.duke.edu/~bmr23/ece568/slides/ERSS_08_Crypto.pdf
+
+0:CONNECT people.duke.edu:443 HTTP/1.1 from 10.197.135.154@Tue Feb 28 16:13:56 2023
+0:Responding HTTP/1.1 200 OK
+
+
+1:CONNECT people.duke.edu:443 HTTP/1.1 from 10.197.135.154@Tue Feb 28 16:13:57 2023
+1:Responding HTTP/1.1 200 OK
+
+_________________________________________________
+*************************************************
+GET
+---
+http://detectportal.firefox.com/success.txt
+
+2:GET http://detectportal.firefox.com/success.txt HTTP/1.1 from 10.197.135.154@Tue Feb 28 16:15:11 2023
+2:not in cache
+2:Requesting GET http://detectportal.firefox.com/success.txt HTTP/1.1 from detectportal.firefox.com
+2:Received HTTP/1.1 200 OK from detectportal.firefox.com
+2:cached, but requires re-validation
+_________________________________________________
+http://www.httpwatch.com/favicon.ico
+
+3:GET http://www.httpwatch.com/favicon.ico HTTP/1.1 from 10.197.135.154@Tue Feb 28 16:15:44 2023
+3:not in cache
+3:Requesting GET http://www.httpwatch.com/favicon.ico HTTP/1.1 from www.httpwatch.com
+3:Received HTTP/1.1 200 OK from www.httpwatch.com
+3:cached, but requires re-validation
+_________________________________________________
+http://www.httpwatch.com/httpgallery/chunked/chunkedimage.aspx
+
+4:GET http://www.httpwatch.com/httpgallery/chunked/chunkedimage.aspx HTTP/1.1 from 10.197.135.154@Tue Feb 28 16:16:10 2023
+4:not in cache
+4:Requesting GET http://www.httpwatch.com/httpgallery/chunked/chunkedimage.aspx HTTP/1.1 from www.httpwatch.com
+4:Received HTTP/1.1 200 OK from www.httpwatch.com
+4:not cacheable because: Cache-control is no-store
+_________________________________________________
+http://www.gov.cn/govweb/xhtml/2016gov/images/public/logo.jpg
+
+5:GET http://www.gov.cn/govweb/xhtml/2016gov/images/public/logo.jpg HTTP/1.1 from 10.197.135.154@Tue Feb 28 16:16:57 2023
+5:not in cache
+5:Requesting GET http://www.gov.cn/govweb/xhtml/2016gov/images/public/logo.jpg HTTP/1.1 from www.gov.cn
+5:Received HTTP/1.1 304 Not Modified from www.gov.cn
+5:not cacheable because: Cache-control is no-store
+_________________________________________________
+*************************************************
+POST
+----
+http://httpbin.org/forms/post
+
+6:GET http://httpbin.org/forms/post HTTP/1.1 from 10.197.135.154@Tue Feb 28 16:17:52 2023
+6:not in cache
+6:Requesting GET http://httpbin.org/forms/post HTTP/1.1 from httpbin.org
+6:Received HTTP/1.1 200 OK from httpbin.org
+6:not cacheable because: Cache-control is no-store
+7:POST http://httpbin.org/post HTTP/1.1 from 10.197.135.154@Tue Feb 28 16:18:19 2023
+7:HTTP/1.1 200 OK
+Date: Tue, 28 Feb 2023 21:18:19 GMT
+Content-Type: application/json
+Content-Length: 1043
+Connection: keep-alive
+Server: gunicorn/19.9.0
+Access-Control-Allow-Origin: http://httpbin.org
+Access-Control-Allow-Credentials: true
+
+{
+  "args": {}, 
+  "data": "", 
+  "files": {}, 
+  "form": {
+    "comments": "test case processing", 
+    "custemail": "12345@gmail.com", 
+    "custname": "123", 
+    "custtel": "12345", 
+    "delivery": "12:30", 
+    "size": "small", 
+    "topping": [
+      "bacon", 
+      "onion"
+    ]
+  }, 
+  "headers": {
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8", 
+    "Accept-Encoding": "gzip, deflate", 
+    "Accept-Language": "zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2", 
+    "Content-Length": "140", 
+    "Content-Type": "application/x-www-form-urlencoded", 
+    "Host": "httpbin.org", 
+    "Origin": "http://httpbin.org", 
+    "Referer": "http://httpbin.org/forms/post", 
+    "Upgrade-Insecure-Requests": "1", 
+    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:109.0) Gecko/20100101 Firefox/110.0", 
+    "X-Amzn-Trace-Id": "Root=1-63fe6f9b-0b1fd288563d86e108258d57"
+  }, 
+  "json": null, 
+  "origin": "152.3.52.37", 
+  "url": "http://httpbin.org/post"
+}
+
+7:Received HTTP/1.1 200 OK from httpbin.org
+8:CONNECT contile.services.mozilla.com:443 HTTP/1.1 from 10.197.135.154@Tue Feb 28 16:18:29 2023
+9:CONNECT spocs.getpocket.com:443 HTTP/1.1 from 10.197.135.154@Tue Feb 28 16:18:29 2023
+8:Responding HTTP/1.1 200 OK
+
+
+9:Responding HTTP/1.1 200 OK
+
+
+10:POST http://ocsp.sca1b.amazontrust.com/ HTTP/1.1 from 10.197.135.154@Tue Feb 28 16:18:29 2023
+11:POST http://r3.o.lencr.org/ HTTP/1.1 from 10.197.135.154@Tue Feb 28 16:18:30 2023
+10:HTTP/1.1 200 OK
+Content-Type: application/ocsp-response
+Content-Length: 471
+Connection: keep-alive
+Accept-Ranges: bytes
+Cache-Control: 'max-age=158059'
+Date: Tue, 28 Feb 2023 21:18:30 GMT
+Last-Modified: Tue, 28 Feb 2023 18:26:05 GMT
+Server: ECAcc (aga/87A1)
+X-Cache: Miss from cloudfront
+Via: 1.1 2c87bc2888ef60a43faafef8499a8c5c.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: ATL58-P5
+X-Amz-Cf-Id: nn4qsMTeancMdoDlJsK5FiknIRl5MIRjrPvhd2CCfs3gx3CZK0Ci5w==
+Age: 10346
+
+0��
+
+10:Received HTTP/1.1 200 OK from ocsp.sca1b.amazontrust.com
+12:CONNECT contile-images.services.mozilla.com:443 HTTP/1.1 from 10.197.135.154@Tue Feb 28 16:18:32 2023
+13:CONNECT contile-images.services.mozilla.com:443 HTTP/1.1 from 10.197.135.154@Tue Feb 28 16:18:32 2023
+12:Responding HTTP/1.1 200 OK
+
+
+13:Responding HTTP/1.1 200 OK
+
+
+14:POST http://r3.o.lencr.org/ HTTP/1.1 from 10.197.135.154@Tue Feb 28 16:18:32 2023
+
+_________________________________________________
+http://www.httpwatch.com/httpgallery/methods/
+
+1:GET http://www.httpwatch.com/httpgallery/methods/ HTTP/1.1 from 10.197.135.154@Tue Feb 28 16:21:09 2023
+1:not in cache
+1:Requesting GET http://www.httpwatch.com/httpgallery/methods/ HTTP/1.1 from www.httpwatch.com
+1:Received HTTP/1.1 200 OK from www.httpwatch.com
+1:not cacheable because: Cache-control is no-store
+4:GET http://www.httpwatch.com/assets/images/logo2.png HTTP/1.1 from 10.197.135.154@Tue Feb 28 16:21:09 2023
+2:GET http://www.httpwatch.com/assets/images/logo1.png HTTP/1.1 from 10.197.135.154@Tue Feb 28 16:21:09 2023
+5:GET http://www.httpwatch.com/httpgallery/methods/retry.png HTTP/1.1 from 10.197.135.154@Tue Feb 28 16:21:09 2023
+3:GET http://www.httpwatch.com/assets/images/httpwatch_32x32.png HTTP/1.1 from 10.197.135.154@Tue Feb 28 16:21:09 2023
+6:GET http://www.httpwatch.com/assets/images/page-head-bg.gif HTTP/1.1 from 10.197.135.154@Tue Feb 28 16:21:09 2023
+7:GET http://www.httpwatch.com/assets/images/widget-li-bg@2x.png HTTP/1.1 from 10.197.135.154@Tue Feb 28 16:21:09 2023
+6:not in cache
+6:Requesting GET http://www.httpwatch.com/assets/images/page-head-bg.gif HTTP/1.1 from www.httpwatch.com
+4:not in cache
+4:Requesting GET http://www.httpwatch.com/assets/images/logo2.png HTTP/1.1 from www.httpwatch.com
+3:not in cache
+3:Requesting GET http://www.httpwatch.com/assets/images/httpwatch_32x32.png HTTP/1.1 from www.httpwatch.com
+5:not in cache
+5:Requesting GET http://www.httpwatch.com/httpgallery/methods/retry.png HTTP/1.1 from www.httpwatch.com
+2:not in cache
+2:Requesting GET http://www.httpwatch.com/assets/images/logo1.png HTTP/1.1 from www.httpwatch.com
+7:not in cache
+7:Requesting GET http://www.httpwatch.com/assets/images/widget-li-bg@2x.png HTTP/1.1 from www.httpwatch.com
+8: from 10.197.135.154@Tue Feb 28 16:21:15 2023
+9: from 10.197.135.154@Tue Feb 28 16:21:15 2023
+
+_________________________________________________
+*************************************************
+Video
+-----
+https://www.youtube.com/
+
+12:CONNECT www.youtube.com:443 HTTP/1.1 from 10.197.135.154@Tue Feb 28 16:26:55 2023
+12:Responding HTTP/1.1 200 OK
+
+
+13:POST http://ocsp.pki.goog/gts1c3 HTTP/1.1 from 10.197.135.154@Tue Feb 28 16:26:55 2023
+13:HTTP/1.1 200 OK
+Content-Type: application/ocsp-response
+Date: Tue, 28 Feb 2023 21:26:55 GMT
+Cache-Control: public, max-age=14400
+Server: ocsp_responder
+Content-Length: 472
+X-XSS-Protection: 0
+X-Frame-Options: SAMEORIGIN
+
+0��
+
+13:Received HTTP/1.1 200 OK from ocsp.pki.goog
+14:CONNECT i.ytimg.com:443 HTTP/1.1 from 10.197.135.154@Tue Feb 28 16:26:55 2023
+14:Responding HTTP/1.1 200 OK
+
+
+16:CONNECT accounts.google.com:443 HTTP/1.1 from 10.197.135.154@Tue Feb 28 16:26:55 2023
+16:Responding HTTP/1.1 200 OK
+
+
+19:CONNECT googleads.g.doubleclick.net:443 HTTP/1.1 from 10.197.135.154@Tue Feb 28 16:26:56 2023
+19:Responding HTTP/1.1 200 OK
+
+
+21:CONNECT www.gstatic.com:443 HTTP/1.1 from 10.197.135.154@Tue Feb 28 16:26:56 2023
+20:CONNECT www.google.com:443 HTTP/1.1 from 10.197.135.154@Tue Feb 28 16:26:56 2023
+22:CONNECT yt3.ggpht.com:443 HTTP/1.1 from 10.197.135.154@Tue Feb 28 16:26:56 2023
+21:Responding HTTP/1.1 200 OK
+
+
+20:Responding HTTP/1.1 200 OK
+
+
+22:Responding HTTP/1.1 200 OK
+
+
+23:CONNECT jnn-pa.googleapis.com:443 HTTP/1.1 from 10.197.135.154@Tue Feb 28 16:26:56 2023
+24:CONNECT static.doubleclick.net:443 HTTP/1.1 from 10.197.135.154@Tue Feb 28 16:26:56 2023
+23:Responding HTTP/1.1 200 OK
+
+
+24:Responding HTTP/1.1 200 OK
+
+
+15: from 10.197.135.154@Tue Feb 28 16:27:01 2023
+17: from 10.197.135.154@Tue Feb 28 16:27:01 2023
+18: from 10.197.135.154@Tue Feb 28 16:27:01 2023
+25: from 10.197.135.154@Tue Feb 28 16:27:06 2023
+_________________________________________________
+https://www.bilibili.com/
+
+11:CONNECT www.bilibili.com:443 HTTP/1.1 from 10.197.135.154@Tue Feb 28 16:30:38 2023
+11:Responding HTTP/1.1 200 OK
+
+
+12:CONNECT play.google.com:443 HTTP/1.1 from 10.197.135.154@Tue Feb 28 16:30:40 2023
+12:Responding HTTP/1.1 200 OK
+
+
+14:POST http://ocsp.pki.goog/gts1c3 HTTP/1.1 from 10.197.135.154@Tue Feb 28 16:30:40 2023
+14:HTTP/1.1 200 OK
+Content-Type: application/ocsp-response
+Date: Tue, 28 Feb 2023 21:30:40 GMT
+Cache-Control: public, max-age=14400
+Server: ocsp_responder
+Content-Length: 472
+X-XSS-Protection: 0
+X-Frame-Options: SAMEORIGIN
+
+0��
+
+14:Received HTTP/1.1 200 OK from ocsp.pki.goog
+16:CONNECT s1.hdslb.com:443 HTTP/1.1 from 10.197.135.154@Tue Feb 28 16:30:41 2023
+19:CONNECT s1.hdslb.com:443 HTTP/1.1 from 10.197.135.154@Tue Feb 28 16:30:41 2023
+15:CONNECT s1.hdslb.com:443 HTTP/1.1 from 10.197.135.154@Tue Feb 28 16:30:41 2023
+17:CONNECT s1.hdslb.com:443 HTTP/1.1 from 10.197.135.154@Tue Feb 28 16:30:41 2023
+21:CONNECT s1.hdslb.com:443 HTTP/1.1 from 10.197.135.154@Tue Feb 28 16:30:41 2023
+18:CONNECT s1.hdslb.com:443 HTTP/1.1 from 10.197.135.154@Tue Feb 28 16:30:41 2023
+20:CONNECT s1.hdslb.com:443 HTTP/1.1 from 10.197.135.154@Tue Feb 28 16:30:41 2023
+16:Responding HTTP/1.1 200 OK
+
+
+17:Responding HTTP/1.1 200 OK
+
+
+19:Responding HTTP/1.1 200 OK
+
+
+15:Responding HTTP/1.1 200 OK
+
+
+18:Responding HTTP/1.1 200 OK
+
+
+20:Responding HTTP/1.1 200 OK
+
+
+21:Responding HTTP/1.1 200 OK
+
+
+22:POST http://ocsp.globalsign.com/gsgccr3dvtlsca2020 HTTP/1.1 from 10.197.135.154@Tue Feb 28 16:30:42 2023
+23:POST http://ocsp.globalsign.com/gsgccr3dvtlsca2020 HTTP/1.1 from 10.197.135.154@Tue Feb 28 16:30:42 2023
+24:POST http://ocsp.globalsign.com/gsgccr3dvtlsca2020 HTTP/1.1 from 10.197.135.154@Tue Feb 28 16:30:42 2023
+25:POST http://ocsp.globalsign.com/gsgccr3dvtlsca2020 HTTP/1.1 from 10.197.135.154@Tue Feb 28 16:30:42 2023
+25:HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Length: 1414
+Server: nginx
+Content-Type: application/ocsp-response
+Expires: Sat, 04 Mar 2023 19:33:10 GMT
+ETag: "ad9e53357aded6d0b602a04b19fa10b4e167b6b9"
+Last-Modified: Tue, 28 Feb 2023 19:33:11 GMT
+Cache-Control: public, no-transform, must-revalidate, s-maxage=3600
+Via: 1.1 varnish, 1.1 varnish
+Accept-Ranges: bytes
+Date: Tue, 28 Feb 2023 21:30:43 GMT
+Age: 3356
+X-Served-By: cache-qpg1258-QPG, cache-iad-kcgs7200077-IAD
+X-Cache: HIT, HIT
+X-Cache-Hits: 95, 1
+X-Timer: S1677619843.568723,VS0,VE492
+
+0��
+
+25:Received HTTP/1.1 200 OK from ocsp.globalsign.com
+24:HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Length: 1414
+Server: nginx
+Content-Type: application/ocsp-response
+Expires: Sat, 04 Mar 2023 19:33:10 GMT
+ETag: "ad9e53357aded6d0b602a04b19fa10b4e167b6b9"
+Last-Modified: Tue, 28 Feb 2023 19:33:11 GMT
+Cache-Control: public, no-transform, must-revalidate, s-maxage=3600
+Via: 1.1 varnish, 1.1 varnish
+Accept-Ranges: bytes
+Date: Tue, 28 Feb 2023 21:30:43 GMT
+Age: 3356
+X-Served-By: cache-qpg1258-QPG, cache-iad-kcgs7200050-IAD
+X-Cache: HIT, HIT
+X-Cache-Hits: 95, 1
+X-Timer: S1677619843.564004,VS0,VE497
+
+0��
+
+24:Received HTTP/1.1 200 OK from ocsp.globalsign.com
+22:HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Length: 1414
+Server: nginx
+Content-Type: application/ocsp-response
+Expires: Sat, 04 Mar 2023 19:33:10 GMT
+ETag: "ad9e53357aded6d0b602a04b19fa10b4e167b6b9"
+Last-Modified: Tue, 28 Feb 2023 19:33:11 GMT
+Cache-Control: public, no-transform, must-revalidate, s-maxage=3600
+Via: 1.1 varnish, 1.1 varnish
+Accept-Ranges: bytes
+Date: Tue, 28 Feb 2023 21:30:43 GMT
+Age: 3356
+X-Served-By: cache-qpg1258-QPG, cache-iad-kcgs7200136-IAD
+X-Cache: HIT, MISS
+X-Cache-Hits: 95, 0
+X-Timer: S1677619843.558071,VS0,VE503
+
+0��
+
+22:Received HTTP/1.1 200 OK from ocsp.globalsign.com
+23:HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Length: 1414
+Server: nginx
+Content-Type: application/ocsp-response
+Expires: Sat, 04 Mar 2023 19:33:10 GMT
+ETag: "ad9e53357aded6d0b602a04b19fa10b4e167b6b9"
+Last-Modified: Tue, 28 Feb 2023 19:33:11 GMT
+Cache-Control: public, no-transform, must-revalidate, s-maxage=3600
+Via: 1.1 varnish, 1.1 varnish
+Accept-Ranges: bytes
+Date: Tue, 28 Feb 2023 21:30:43 GMT
+Age: 3356
+X-Served-By: cache-qpg1258-QPG, cache-iad-kcgs7200113-IAD
+X-Cache: HIT, HIT
+X-Cache-Hits: 95, 1
+X-Timer: S1677619843.560079,VS0,VE501
+
+0��
+
+23:Received HTTP/1.1 200 OK from ocsp.globalsign.com
+26:CONNECT i2.hdslb.com:443 HTTP/1.1 from 10.197.135.154@Tue Feb 28 16:30:44 2023
+27:CONNECT i0.hdslb.com:443 HTTP/1.1 from 10.197.135.154@Tue Feb 28 16:30:44 2023
+29:CONNECT i0.hdslb.com:443 HTTP/1.1 from 10.197.135.154@Tue Feb 28 16:30:44 2023
+32:CONNECT i1.hdslb.com:443 HTTP/1.1 from 10.197.135.154@Tue Feb 28 16:30:44 2023
+30:CONNECT i0.hdslb.com:443 HTTP/1.1 from 10.197.135.154@Tue Feb 28 16:30:44 2023
+36:CONNECT i2.hdslb.com:443 HTTP/1.1 from 10.197.135.154@Tue Feb 28 16:30:44 2023
+31:CONNECT i0.hdslb.com:443 HTTP/1.1 from 10.197.135.154@Tue Feb 28 16:30:44 2023
+33:CONNECT i1.hdslb.com:443 HTTP/1.1 from 10.197.135.154@Tue Feb 28 16:30:44 2023
+28:CONNECT i1.hdslb.com:443 HTTP/1.1 from 10.197.135.154@Tue Feb 28 16:30:44 2023
+37:CONNECT i2.hdslb.com:443 HTTP/1.1 from 10.197.135.154@Tue Feb 28 16:30:44 2023
+34:CONNECT i2.hdslb.com:443 HTTP/1.1 from 10.197.135.154@Tue Feb 28 16:30:44 2023
+35:CONNECT i2.hdslb.com:443 HTTP/1.1 from 10.197.135.154@Tue Feb 28 16:30:44 2023
+38:CONNECT api.bilibili.com:443 HTTP/1.1 from 10.197.135.154@Tue Feb 28 16:30:44 2023
+39:CONNECT i0.hdslb.com:443 HTTP/1.1 from 10.197.135.154@Tue Feb 28 16:30:44 2023
+41:CONNECT api.bilibili.com:443 HTTP/1.1 from 10.197.135.154@Tue Feb 28 16:30:44 2023
+40:CONNECT i0.hdslb.com:443 HTTP/1.1 from 10.197.135.154@Tue Feb 28 16:30:44 2023
+38:Responding HTTP/1.1 200 OK
+
+
+41:Responding HTTP/1.1 200 OK
+
+
+43:CONNECT api.bilibili.com:443 HTTP/1.1 from 10.197.135.154@Tue Feb 28 16:30:44 2023
+45:CONNECT api.bilibili.com:443 HTTP/1.1 from 10.197.135.154@Tue Feb 28 16:30:44 2023
+42:CONNECT data.bilibili.com:443 HTTP/1.1 from 10.197.135.154@Tue Feb 28 16:30:44 2023
+36:Responding HTTP/1.1 200 OK
+
+
+35:Responding HTTP/1.1 200 OK
+
+
+34:Responding HTTP/1.1 200 OK
+
+
+26:Responding HTTP/1.1 200 OK
+
+
+37:Responding HTTP/1.1 200 OK
+
+
+30:Responding HTTP/1.1 200 OK
+
+
+29:Responding HTTP/1.1 200 OK
+
+
+27:Responding HTTP/1.1 200 OK
+
+
+39:Responding HTTP/1.1 200 OK
+
+
+31:Responding HTTP/1.1 200 OK
+
+
+40:Responding HTTP/1.1 200 OK
+
+
+45:Responding HTTP/1.1 200 OK
+
+
+43:Responding HTTP/1.1 200 OK
+
+
+42:Responding HTTP/1.1 200 OK
+
+
+46:CONNECT cm.bilibili.com:443 HTTP/1.1 from 10.197.135.154@Tue Feb 28 16:30:45 2023
+48:CONNECT cm.bilibili.com:443 HTTP/1.1 from 10.197.135.154@Tue Feb 28 16:30:45 2023
+28:Responding HTTP/1.1 200 OK
+
+
+32:Responding HTTP/1.1 200 OK
+
+
+33:Responding HTTP/1.1 200 OK
+
+
+48:Responding HTTP/1.1 200 OK
+
+
+46:Responding HTTP/1.1 200 OK
+
+
+49:CONNECT api.live.bilibili.com:443 HTTP/1.1 from 10.197.135.154@Tue Feb 28 16:30:45 2023
+49:Responding HTTP/1.1 200 OK
+
+
+47:CONNECT cm.bilibili.com:443 HTTP/1.1 from 10.197.135.154@Tue Feb 28 16:30:45 2023
+47:Responding HTTP/1.1 200 OK
+
+
+13: from 10.197.135.154@Tue Feb 28 16:30:46 2023
+50:CONNECT cm.bilibili.com:443 HTTP/1.1 from 10.197.135.154@Tue Feb 28 16:30:46 2023
+51:CONNECT cm.bilibili.com:443 HTTP/1.1 from 10.197.135.154@Tue Feb 28 16:30:46 2023
+50:Responding HTTP/1.1 200 OK
+
+
+51:Responding HTTP/1.1 200 OK
+
+
+52:CONNECT static.hdslb.com:443 HTTP/1.1 from 10.197.135.154@Tue Feb 28 16:30:46 2023
+52:Responding HTTP/1.1 200 OK
+
+
+44: from 10.197.135.154@Tue Feb 28 16:30:50 2023
+_________________________________________________
+*************************************************
+Cache
+-----
+max-age=0:
+---------
+http://www.httpwatch.com/favicon.ico 
+========
+First 
+========
+1:GET http://www.httpwatch.com/favicon.ico HTTP/1.1 from 10.197.135.154@Tue Feb 28 16:33:06 2023
+1:not in cache
+1:Requesting GET http://www.httpwatch.com/favicon.ico HTTP/1.1 from www.httpwatch.com
+1:Received HTTP/1.1 200 OK from www.httpwatch.com
+1:cached, but requires re-validation
+========
+Second
+========
+6:GET http://www.httpwatch.com/favicon.ico HTTP/1.1 from 10.197.135.154@Tue Feb 28 16:34:06 2023
+6:in cache, requires validation
+6:cached, but requires re-validation
+7:GET http://www.httpwatch.com/favicon.ico HTTP/1.1 from 10.197.135.154@Tue Feb 28 16:34:07 2023
+7:in cache, requires validation
+7:cached, but requires re-validation
+_________________________________________________
+no-cache, no-store:
+------------------
+http://www.httpwatch.com/httpgallery/chunked/chunkedimage.aspx
+========
+First
+========
+0:GET http://www.httpwatch.com/httpgallery/chunked/chunkedimage.aspx HTTP/1.1 from 10.197.135.154@Tue Feb 28 16:36:32 2023
+0:not in cache
+0:Requesting GET http://www.httpwatch.com/httpgallery/chunked/chunkedimage.aspx HTTP/1.1 from www.httpwatch.com
+0:Received HTTP/1.1 200 OK from www.httpwatch.com
+0:not cacheable because: Cache-control is no-store
+1:CONNECT contile-images.services.mozilla.com:443 HTTP/1.1 from 10.197.135.154@Tue Feb 28 16:36:38 2023
+1:Responding HTTP/1.1 200 OK
+========
+Second
+========
+2:POST http://r3.o.lencr.org/ HTTP/1.1 from 10.197.135.154@Tue Feb 28 16:38:48 2023
+3:GET http://www.httpwatch.com/httpgallery/chunked/chunkedimage.aspx HTTP/1.1 from 10.197.135.154@Tue Feb 28 16:36:40 2023
+3:not in cache
+3:Requesting GET http://www.httpwatch.com/httpgallery/chunked/chunkedimage.aspx HTTP/1.1 from www.httpwatch.com
+3:Received HTTP/1.1 200 OK from www.httpwatch.com
+3:not cacheable because: Cache-control is no-store
+_________________________________________________
+no max-age:
+----------
+http://www.httpwatch.com/httpgallery/chunked/chunkedimage.aspx%20HTTP/1.1
+=========
+First
+=========
+0:GET http://www.httpwatch.com/httpgallery/chunked/chunkedimage.aspx%20HTTP/1.1 from 10.197.135.154@Tue Feb 28 16:38:43 2023
+0:not in cache
+0:Requesting GET http://www.httpwatch.com/httpgallery/chunked/chunkedimage.aspx%20HTTP/1.1 from www.httpwatch.com
+0:Received HTTP/1.1 404 Not Found from www.httpwatch.com
+0:not cacheable because: Cache-control is no-store
+1:CONNECT contile-images.services.mozilla.com:443 HTTP/1.1 from 10.197.135.154@Tue Feb 28 16:38:48 2023
+1:Responding HTTP/1.1 200 OK
+=========
+Second
+=========
+2:POST http://r3.o.lencr.org/ HTTP/1.1 from 10.197.135.154@Tue Feb 28 16:38:48 2023
+3:GET http://www.httpwatch.com/httpgallery/chunked/chunkedimage.aspx%20HTTP/1.1 from 10.197.135.154@Tue Feb 28 16:38:51 2023
+3:not in cache
+3:Requesting GET http://www.httpwatch.com/httpgallery/chunked/chunkedimage.aspx%20HTTP/1.1 from www.httpwatch.com
+3:Received HTTP/1.1 404 Not Found from www.httpwatch.com
+3:not cacheable because: Cache-control is no-store
+5:CONNECT incoming.telemetry.mozilla.org:443 HTTP/1.1 from 10.197.135.154@Tue Feb 28 16:38:51 2023
+6:CONNECT incoming.telemetry.mozilla.org:443 HTTP/1.1 from 10.197.135.154@Tue Feb 28 16:38:51 2023
+5:Responding HTTP/1.1 200 OK
+_________________________________________________
+no-cache, must-revalidate:
+-------------------------
+http://pagead2.googlesyndication.com/pcs/activeview?xai=AKAOjssWwALLx7RyvZ5o-66aUsQus9q8CafXDlmYqNzmph_wvhqTI1Mlz8g0HNJOTB0PI8V-VxXLVAkOUd_9fHL1oJDM7LZTXAl9OIE&sig=Cg0ArKJSzPCPChASOzL8EAE&id=lidartos&mcvt=30242&p=0,0,90,728&mtos=30242,30242,30242,30242,30242&tos=30242,0,0,0,0&v=20230222&bin=7&avms=nio&bs=1125,939&mc=1&vu=1&app=0&itpl=32&adk=2035069869&rs=6&la=0&cr=0&uach=WyJtYWNPUyIsIjEyLjYuMiIsIng4NiIsIiIsIjExMC4wLjU0ODEuMTc3IixbXSxmYWxzZSxudWxsLCI2NCIsW1siQ2hyb21pdW0iLCIxMTAuMC41NDgxLjE3NyJdLFsiTm90IEEoQnJhbmQiLCIyNC4wLjAuMCJdLFsiR29vZ2xlIENocm9tZSIsIjExMC4wLjU0ODEuMTc3Il1dLGZhbHNlXQ%3D%3D&vs=4&r=b&rst=1677361698756&rpt=484&ec=1&wmsd=0&pbe=0&vae=0&spb=0
+=========
+First
+=========
+0:GET http://pagead2.googlesyndication.com/pcs/activeview?xai=AKAOjssWwALLx7RyvZ5o-66aUsQus9q8CafXDlmYqNzmph_wvhqTI1Mlz8g0HNJOTB0PI8V-VxXLVAkOUd_9fHL1oJDM7LZTXAl9OIE&sig=Cg0ArKJSzPCPChASOzL8EAE&id=lidartos&mcvt=30242&p=0,0,90,728&mtos=30242,30242,30242,30242,30242&tos=30242,0,0,0,0&v=20230222&bin=7&avms=nio&bs=1125,939&mc=1&vu=1&app=0&itpl=32&adk=2035069869&rs=6&la=0&cr=0&uach=WyJtYWNPUyIsIjEyLjYuMiIsIng4NiIsIiIsIjExMC4wLjU0ODEuMTc3IixbXSxmYWxzZSxudWxsLCI2NCIsW1siQ2hyb21pdW0iLCIxMTAuMC41NDgxLjE3NyJdLFsiTm90IEEoQnJhbmQiLCIyNC4wLjAuMCJdLFsiR29vZ2xlIENocm9tZSIsIjExMC4wLjU0ODEuMTc3Il1dLGZhbHNlXQ%3D%3D&vs=4&r=b&rst=1677361698756&rpt=484&ec=1&wmsd=0&pbe=0&vae=0&spb=0 HTTP/1.1 from 10.197.135.154@Tue Feb 28 16:41:46 2023
+0:not in cache
+0:Requesting GET http://pagead2.googlesyndication.com/pcs/activeview?xai=AKAOjssWwALLx7RyvZ5o-66aUsQus9q8CafXDlmYqNzmph_wvhqTI1Mlz8g0HNJOTB0PI8V-VxXLVAkOUd_9fHL1oJDM7LZTXAl9OIE&sig=Cg0ArKJSzPCPChASOzL8EAE&id=lidartos&mcvt=30242&p=0,0,90,728&mtos=30242,30242,30242,30242,30242&tos=30242,0,0,0,0&v=20230222&bin=7&avms=nio&bs=1125,939&mc=1&vu=1&app=0&itpl=32&adk=2035069869&rs=6&la=0&cr=0&uach=WyJtYWNPUyIsIjEyLjYuMiIsIng4NiIsIiIsIjExMC4wLjU0ODEuMTc3IixbXSxmYWxzZSxudWxsLCI2NCIsW1siQ2hyb21pdW0iLCIxMTAuMC41NDgxLjE3NyJdLFsiTm90IEEoQnJhbmQiLCIyNC4wLjAuMCJdLFsiR29vZ2xlIENocm9tZSIsIjExMC4wLjU0ODEuMTc3Il1dLGZhbHNlXQ%3D%3D&vs=4&r=b&rst=1677361698756&rpt=484&ec=1&wmsd=0&pbe=0&vae=0&spb=0 HTTP/1.1 from pagead2.googlesyndication.com
+0:Received HTTP/1.1 200 OK from pagead2.googlesyndication.com
+0:cached, expires at Fri, 01 Jan 1990 00:00:00 GMT
+1:GET http://pagead2.googlesyndication.com/favicon.ico HTTP/1.1 from 10.197.135.154@Tue Feb 28 16:41:46 2023
+1:not in cache
+1:Requesting GET http://pagead2.googlesyndication.com/favicon.ico HTTP/1.1 from pagead2.googlesyndication.com
+1:Received HTTP/1.1 200 OK from pagead2.googlesyndication.com
+1:cached, expires at Wed, 28 Feb 2024 21:41:46 GMT
+3:CONNECT contile-images.services.mozilla.com:443 HTTP/1.1 from 10.197.135.154@Tue Feb 28 16:42:04 2023
+2:CONNECT contile-images.services.mozilla.com:443 HTTP/1.1 from 10.197.135.154@Tue Feb 28 16:42:04 2023
+3:Responding HTTP/1.1 200 OK
+=========
+Second
+=========
+6:GET http://pagead2.googlesyndication.com/pcs/activeview?xai=AKAOjssWwALLx7RyvZ5o-66aUsQus9q8CafXDlmYqNzmph_wvhqTI1Mlz8g0HNJOTB0PI8V-VxXLVAkOUd_9fHL1oJDM7LZTXAl9OIE&sig=Cg0ArKJSzPCPChASOzL8EAE&id=lidartos&mcvt=30242&p=0,0,90,728&mtos=30242,30242,30242,30242,30242&tos=30242,0,0,0,0&v=20230222&bin=7&avms=nio&bs=1125,939&mc=1&vu=1&app=0&itpl=32&adk=2035069869&rs=6&la=0&cr=0&uach=WyJtYWNPUyIsIjEyLjYuMiIsIng4NiIsIiIsIjExMC4wLjU0ODEuMTc3IixbXSxmYWxzZSxudWxsLCI2NCIsW1siQ2hyb21pdW0iLCIxMTAuMC41NDgxLjE3NyJdLFsiTm90IEEoQnJhbmQiLCIyNC4wLjAuMCJdLFsiR29vZ2xlIENocm9tZSIsIjExMC4wLjU0ODEuMTc3Il1dLGZhbHNlXQ%3D%3D&vs=4&r=b&rst=1677361698756&rpt=484&ec=1&wmsd=0&pbe=0&vae=0&spb=0 HTTP/1.1 from 10.197.135.154@Tue Feb 28 16:42:07 2023
+6:in cache, requires validation
+6:cached, expires at Fri, 01 Jan 1990 00:00:00 GMT
+7:CONNECT incoming.telemetry.mozilla.org:443 HTTP/1.1 from 10.197.135.154@Tue Feb 28 16:42:07 2023
+8:CONNECT incoming.telemetry.mozilla.org:443 HTTP/1.1 from 10.197.135.154@Tue Feb 28 16:42:07 2023
+8:Responding HTTP/1.1 200 OK
+_________________________________________________
+max-age=3600, must-revalidate (ETAG and other info added):
+-----------------------------
+https://run.mocky.io/v3/d38c5d07-8899-44c4-8cf5-1d4d00c95e74
+=========
+First
+=========
+0:CONNECT run.mocky.io:443 HTTP/1.1 from 10.197.135.154@Tue Feb 28 16:45:43 2023
+0:Responding HTTP/1.1 200 OK
+
+
+1:POST http://r3.o.lencr.org/ HTTP/1.1 from 10.197.135.154@Tue Feb 28 16:45:43 2023
+2:CONNECT contile-images.services.mozilla.com:443 HTTP/1.1 from 10.197.135.154@Tue Feb 28 16:45:49 2023
+2:Responding HTTP/1.1 200 OK
+=========
+Second
+=========
+3:POST http://r3.o.lencr.org/ HTTP/1.1 from 10.197.135.154@Tue Feb 28 16:45:49 2023
+4:CONNECT incoming.telemetry.mozilla.org:443 HTTP/1.1 from 10.197.135.154@Tue Feb 28 16:45:54 2023
+5:CONNECT incoming.telemetry.mozilla.org:443 HTTP/1.1 from 10.197.135.154@Tue Feb 28 16:45:54 2023
+4:Responding HTTP/1.1 200 OK
+
+
+5:Responding HTTP/1.1 200 OK
+_________________________________________________
+no-cache
+--------
+https://run.mocky.io/v3/ea806844-db0e-4d9b-996e-e3b9a531f651
+=========
+First
+=========
+0:CONNECT run.mocky.io:443 HTTP/1.1 from 10.197.135.154@Tue Feb 28 16:55:11 2023
+0:Responding HTTP/1.1 200 OK
+
+=========
+Second
+=========
+1:POST http://r3.o.lencr.org/ HTTP/1.1 from 10.197.135.154@Tue Feb 28 16:55:12 2023
+2:CONNECT run.mocky.io:443 HTTP/1.1 from 10.197.135.154@Tue Feb 28 16:55:42 2023
+2:Responding HTTP/1.1 200 OK
+
+
+3:POST http://r3.o.lencr.org/ HTTP/1.1 from 10.197.135.154@Tue Feb 28 16:55:42 2023
+
+_________________________________________________
+*************************************************

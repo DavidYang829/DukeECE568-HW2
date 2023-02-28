@@ -1,0 +1,651 @@
+0:CONNECT contile.services.mozilla.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:55:20 2023
+0:Responding HTTP/1.1 200 OK
+
+
+1:CONNECT firefox.settings.services.mozilla.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:55:20 2023
+1:Responding HTTP/1.1 200 OK
+
+
+3:CONNECT content-signature-2.cdn.mozilla.net:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:55:20 2023
+2:GET http://google.com/ HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:55:20 2023
+2:not in cache
+2:Requesting GET http://google.com/ HTTP/1.1 from google.com
+3:Responding HTTP/1.1 200 OK
+
+
+2:Received HTTP/1.1 301 Moved Permanently from google.com
+4:CONNECT www.google.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:55:20 2023
+4:Responding HTTP/1.1 200 OK
+
+
+8:CONNECT adservice.google.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:55:21 2023
+8:Responding HTTP/1.1 200 OK
+
+
+9:CONNECT googleads.g.doubleclick.net:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:55:21 2023
+9:Responding HTTP/1.1 200 OK
+
+
+10:CONNECT safebrowsing.googleapis.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:55:21 2023
+10:Responding HTTP/1.1 200 OK
+
+
+5: from 10.198.96.40@Tue Feb 28 21:55:26 2023
+7: from 10.198.96.40@Tue Feb 28 21:55:26 2023
+6: from 10.198.96.40@Tue Feb 28 21:55:26 2023
+11:GET http://www.httpwatch.com/httpgallery/methods/ HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:55:28 2023
+11:not in cache
+11:Requesting GET http://www.httpwatch.com/httpgallery/methods/ HTTP/1.1 from www.httpwatch.com
+11:Received HTTP/1.1 200 OK from www.httpwatch.com
+11:not cacheable because: Cache-control is no-store
+12:GET http://www.httpwatch.com/assets/images/logo2.png HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:55:28 2023
+13:GET http://www.httpwatch.com/assets/images/logo1.png HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:55:28 2023
+14:GET http://www.httpwatch.com/httpgallery/methods/retry.png HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:55:28 2023
+15:GET http://www.httpwatch.com/assets/images/page-head-bg.gif HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:55:28 2023
+16:GET http://www.httpwatch.com/assets/images/httpwatch_32x32.png HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:55:28 2023
+17:GET http://www.httpwatch.com/assets/images/widget-li-bg@2x.png HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:55:28 2023
+12:not in cache
+12:Requesting GET http://www.httpwatch.com/assets/images/logo2.png HTTP/1.1 from www.httpwatch.com
+13:not in cache
+13:Requesting GET http://www.httpwatch.com/assets/images/logo1.png HTTP/1.1 from www.httpwatch.com
+14:not in cache
+14:Requesting GET http://www.httpwatch.com/httpgallery/methods/retry.png HTTP/1.1 from www.httpwatch.com
+15:not in cache
+15:Requesting GET http://www.httpwatch.com/assets/images/page-head-bg.gif HTTP/1.1 from www.httpwatch.com
+17:not in cache
+17:Requesting GET http://www.httpwatch.com/assets/images/widget-li-bg@2x.png HTTP/1.1 from www.httpwatch.com
+16:not in cache
+16:Requesting GET http://www.httpwatch.com/assets/images/httpwatch_32x32.png HTTP/1.1 from www.httpwatch.com
+13:Received HTTP/1.1 200 OK from www.httpwatch.com
+12:Received HTTP/1.1 200 OK from www.httpwatch.com
+12:cached, but requires re-validation
+13:cached, but requires re-validation
+16:Received HTTP/1.1 200 OK from www.httpwatch.com
+16:cached, but requires re-validation
+15:Received HTTP/1.1 200 OK from www.httpwatch.com
+15:cached, but requires re-validation
+17:Received HTTP/1.1 200 OK from www.httpwatch.com
+17:cached, but requires re-validation
+14:Received HTTP/1.1 200 OK from www.httpwatch.com
+14:cached, but requires re-validation
+21:CONNECT www.google-analytics.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:55:28 2023
+21:Responding HTTP/1.1 200 OK
+
+
+22:CONNECT www.youtube.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:55:32 2023
+22:Responding HTTP/1.1 200 OK
+
+
+23:CONNECT i.ytimg.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:55:33 2023
+24:CONNECT safebrowsing.googleapis.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:55:33 2023
+24:Responding HTTP/1.1 200 OK
+
+
+23:Responding HTTP/1.1 200 OK
+
+
+20: from 10.198.96.40@Tue Feb 28 21:55:34 2023
+18: from 10.198.96.40@Tue Feb 28 21:55:34 2023
+19: from 10.198.96.40@Tue Feb 28 21:55:34 2023
+27:CONNECT yt3.ggpht.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:55:34 2023
+28:CONNECT yt3.ggpht.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:55:34 2023
+29:CONNECT yt3.ggpht.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:55:34 2023
+28:Responding HTTP/1.1 200 OK
+
+
+27:Responding HTTP/1.1 200 OK
+
+
+29:Responding HTTP/1.1 200 OK
+
+
+32:CONNECT static.doubleclick.net:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:55:35 2023
+33:CONNECT jnn-pa.googleapis.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:55:35 2023
+33:Responding HTTP/1.1 200 OK
+
+
+32:Responding HTTP/1.1 200 OK
+
+
+25: from 10.198.96.40@Tue Feb 28 21:55:38 2023
+30: from 10.198.96.40@Tue Feb 28 21:55:39 2023
+26: from 10.198.96.40@Tue Feb 28 21:55:39 2023
+31: from 10.198.96.40@Tue Feb 28 21:55:40 2023
+34: from 10.198.96.40@Tue Feb 28 21:55:40 2023
+36: from 10.198.96.40@Tue Feb 28 21:55:46 2023
+35: from 10.198.96.40@Tue Feb 28 21:55:46 2023
+37:CONNECT rr3---sn-hjoj-gq0l.googlevideo.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:01 2023
+37:Responding HTTP/1.1 200 OK
+
+
+38:CONNECT rr3---sn-hjoj-gq0l.googlevideo.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:01 2023
+38:Responding HTTP/1.1 200 OK
+
+
+40:CONNECT rr3---sn-hjoj-gq0l.googlevideo.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:01 2023
+39:CONNECT rr3---sn-hjoj-gq0l.googlevideo.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:01 2023
+40:Responding HTTP/1.1 200 OK
+
+
+39:Responding HTTP/1.1 200 OK
+
+
+41:CONNECT securepubads.g.doubleclick.net:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:01 2023
+41:Responding HTTP/1.1 200 OK
+
+
+42:CONNECT pagead2.googlesyndication.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:01 2023
+43:CONNECT pubads.g.doubleclick.net:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:01 2023
+44:CONNECT ad.doubleclick.net:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:01 2023
+45:CONNECT pubads.g.doubleclick.net:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:01 2023
+42:Responding HTTP/1.1 200 OK
+
+
+43:Responding HTTP/1.1 200 OK
+
+
+45:Responding HTTP/1.1 200 OK
+
+
+44:Responding HTTP/1.1 200 OK
+
+
+47:CONNECT rr4---sn-hjoj-gq0l.googlevideo.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:03 2023
+48:CONNECT rr4---sn-hjoj-gq0l.googlevideo.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:03 2023
+47:Responding HTTP/1.1 200 OK
+
+
+48:Responding HTTP/1.1 200 OK
+
+
+49:CONNECT play.google.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:05 2023
+49:Responding HTTP/1.1 200 OK
+
+
+50:CONNECT play.google.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:06 2023
+50:Responding HTTP/1.1 200 OK
+
+
+46: from 10.198.96.40@Tue Feb 28 21:56:07 2023
+52:CONNECT www.google.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:14 2023
+52:Responding HTTP/1.1 200 OK
+
+
+51: from 10.198.96.40@Tue Feb 28 21:56:14 2023
+55:CONNECT id.google.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:15 2023
+55:Responding HTTP/1.1 200 OK
+
+
+54:CONNECT www.gstatic.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:15 2023
+54:Responding HTTP/1.1 200 OK
+
+
+58:CONNECT safebrowsing.googleapis.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:15 2023
+58:Responding HTTP/1.1 200 OK
+
+
+60:CONNECT safebrowsing.googleapis.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:16 2023
+60:Responding HTTP/1.1 200 OK
+
+
+61:CONNECT sportsbookwire.usatoday.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:16 2023
+61:Responding HTTP/1.1 200 OK
+
+
+62:CONNECT cdn.cookielaw.org:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:16 2023
+63:CONNECT usatodaysports-d.openx.net:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:16 2023
+66:CONNECT cdn.confiant-integrations.net:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:16 2023
+64:CONNECT mtrx.go.sonobi.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:16 2023
+65:CONNECT cdn.adsafeprotected.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:16 2023
+67:CONNECT sadmin.brightcove.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:16 2023
+68:CONNECT www.usatoday.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:16 2023
+62:Responding HTTP/1.1 200 OK
+
+
+66:Responding HTTP/1.1 200 OK
+
+
+63:Responding HTTP/1.1 200 OK
+
+
+65:Responding HTTP/1.1 200 OK
+
+
+70:CONNECT cdn.p-n.io:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:16 2023
+69:CONNECT s.skimresources.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:16 2023
+71:CONNECT www.zergnet.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:16 2023
+72:CONNECT platform-api.sharethis.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:16 2023
+73:CONNECT native.sharethrough.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:16 2023
+64:Responding HTTP/1.1 200 OK
+
+
+74:CONNECT stats.wp.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:16 2023
+68:Responding HTTP/1.1 200 OK
+
+
+67:Responding HTTP/1.1 200 OK
+
+
+74:Responding HTTP/1.1 200 OK
+
+
+71:Responding HTTP/1.1 200 OK
+
+
+69:Responding HTTP/1.1 200 OK
+
+
+70:Responding HTTP/1.1 200 OK
+
+
+72:Responding HTTP/1.1 200 OK
+
+
+73:Responding HTTP/1.1 200 OK
+
+
+75:CONNECT safebrowsing.googleapis.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:16 2023
+75:Responding HTTP/1.1 200 OK
+
+
+76:CONNECT www.googletagservices.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:16 2023
+78:CONNECT fuzzybasketball.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:16 2023
+77:CONNECT cdn.cookielaw.org:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:16 2023
+76:Responding HTTP/1.1 200 OK
+
+
+77:Responding HTTP/1.1 200 OK
+
+
+78:Responding HTTP/1.1 200 OK
+
+
+79:CONNECT www.usatoday.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:16 2023
+79:Responding HTTP/1.1 200 OK
+
+
+80:CONNECT cpt-static.gannettdigital.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:16 2023
+81:CONNECT cpt-static.gannettdigital.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:16 2023
+82:CONNECT cpt-static.gannettdigital.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:16 2023
+80:Responding HTTP/1.1 200 OK
+
+
+81:Responding HTTP/1.1 200 OK
+
+
+82:Responding HTTP/1.1 200 OK
+
+
+83:CONNECT securepubads.g.doubleclick.net:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:17 2023
+83:Responding HTTP/1.1 200 OK
+
+
+85:CONNECT img4.zergnet.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:17 2023
+84:CONNECT img5.zergnet.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:17 2023
+86:CONNECT img5.zergnet.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:17 2023
+87:CONNECT img1.zergnet.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:17 2023
+88:CONNECT img5.zergnet.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:17 2023
+89:CONNECT img5.zergnet.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:17 2023
+86:Responding HTTP/1.1 200 OK
+
+
+85:Responding HTTP/1.1 200 OK
+
+
+84:Responding HTTP/1.1 200 OK
+
+
+87:Responding HTTP/1.1 200 OK
+
+
+89:Responding HTTP/1.1 200 OK
+
+
+88:Responding HTTP/1.1 200 OK
+
+
+90:CONNECT l.sharethis.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:17 2023
+91:CONNECT pixel.wp.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:17 2023
+92:CONNECT r.skimresources.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:17 2023
+90:Responding HTTP/1.1 200 OK
+
+
+91:Responding HTTP/1.1 200 OK
+
+
+92:Responding HTTP/1.1 200 OK
+
+
+93:CONNECT media.pushlycdn.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:17 2023
+93:Responding HTTP/1.1 200 OK
+
+
+94:CONNECT micro.rubiconproject.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:17 2023
+95:CONNECT p.skimresources.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:17 2023
+98:CONNECT static.adsafeprotected.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:17 2023
+97:CONNECT connect.facebook.net:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:17 2023
+99:CONNECT c.amazon-adsystem.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:17 2023
+100:CONNECT p.skimresources.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:17 2023
+96:CONNECT ats.rlcdn.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:17 2023
+98:Responding HTTP/1.1 200 OK
+
+
+97:Responding HTTP/1.1 200 OK
+
+
+99:Responding HTTP/1.1 200 OK
+
+
+94:Responding HTTP/1.1 200 OK
+
+
+95:Responding HTTP/1.1 200 OK
+
+
+100:Responding HTTP/1.1 200 OK
+
+
+96:Responding HTTP/1.1 200 OK
+
+
+101:CONNECT aax-dtb-cf.amazon-adsystem.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:17 2023
+101:Responding HTTP/1.1 200 OK
+
+
+102:CONNECT k.p-n.io:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:17 2023
+102:Responding HTTP/1.1 200 OK
+
+
+103:CONNECT prebid-server.rubiconproject.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:17 2023
+104:CONNECT prebid-server.rubiconproject.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:17 2023
+105:CONNECT ib.adnxs.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:17 2023
+106:CONNECT grid.bidswitch.net:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:17 2023
+107:CONNECT c2shb.ssp.yahoo.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:17 2023
+108:CONNECT c2shb.ssp.yahoo.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:17 2023
+109:CONNECT c2shb.ssp.yahoo.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:17 2023
+110:CONNECT c2shb.ssp.yahoo.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:17 2023
+111:CONNECT c2shb.ssp.yahoo.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:17 2023
+112:CONNECT c2shb.ssp.yahoo.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:17 2023
+113:CONNECT tlx.3lift.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:17 2023
+114:CONNECT ads.yieldmo.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:17 2023
+108:Responding HTTP/1.1 200 OK
+
+
+109:Responding HTTP/1.1 200 OK
+
+
+107:Responding HTTP/1.1 200 OK
+
+
+110:Responding HTTP/1.1 200 OK
+
+
+105:Responding HTTP/1.1 200 OK
+
+
+115:CONNECT htlb.casalemedia.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:17 2023
+104:Responding HTTP/1.1 200 OK
+
+
+103:Responding HTTP/1.1 200 OK
+
+
+106:Responding HTTP/1.1 200 OK
+
+
+111:Responding HTTP/1.1 200 OK
+
+
+112:Responding HTTP/1.1 200 OK
+
+
+113:Responding HTTP/1.1 200 OK
+
+
+114:Responding HTTP/1.1 200 OK
+
+
+115:Responding HTTP/1.1 200 OK
+
+
+116:CONNECT prebid.media.net:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:17 2023
+123:CONNECT a.teads.tv:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:17 2023
+119:CONNECT krk.kargo.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:17 2023
+121:CONNECT fastlane.rubiconproject.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:17 2023
+122:CONNECT fastlane.rubiconproject.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:17 2023
+118:CONNECT fastlane.rubiconproject.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:17 2023
+117:CONNECT fastlane.rubiconproject.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:17 2023
+120:CONNECT fastlane.rubiconproject.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:17 2023
+124:CONNECT fastlane.rubiconproject.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:17 2023
+125:CONNECT hbopenbid.pubmatic.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:17 2023
+126:CONNECT geolocation.onetrust.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:17 2023
+117:Responding HTTP/1.1 200 OK
+
+
+118:Responding HTTP/1.1 200 OK
+
+
+121:Responding HTTP/1.1 200 OK
+
+
+124:Responding HTTP/1.1 200 OK
+
+
+122:Responding HTTP/1.1 200 OK
+
+
+126:Responding HTTP/1.1 200 OK
+
+
+120:Responding HTTP/1.1 200 OK
+
+
+125:Responding HTTP/1.1 200 OK
+
+
+123:Responding HTTP/1.1 200 OK
+
+
+119:Responding HTTP/1.1 200 OK
+
+
+116:Responding HTTP/1.1 200 OK
+
+
+127:CONNECT www.googletagmanager.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:17 2023
+128:CONNECT tru.am:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:17 2023
+129:CONNECT t.skimresources.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:17 2023
+130:CONNECT t.skimresources.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:17 2023
+127:Responding HTTP/1.1 200 OK
+
+
+131:CONNECT targeting.unrulymedia.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:17 2023
+131:Responding HTTP/1.1 200 OK
+
+
+129:Responding HTTP/1.1 200 OK
+
+
+130:Responding HTTP/1.1 200 OK
+
+
+132:CONNECT prod.us-east-1.cxm-bcn.publisher-services.amazon.dev:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:18 2023
+128:Responding HTTP/1.1 200 OK
+
+
+132:Responding HTTP/1.1 200 OK
+
+
+134:CONNECT targeting.unrulymedia.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:18 2023
+135:CONNECT beacon.tru.am:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:18 2023
+135:Responding HTTP/1.1 200 OK
+
+
+136:CONNECT colossalclouds.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:18 2023
+137:CONNECT u.openx.net:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:18 2023
+137:Responding HTTP/1.1 200 OK
+
+
+136:Responding HTTP/1.1 200 OK
+
+
+138:CONNECT s.amazon-adsystem.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:18 2023
+138:Responding HTTP/1.1 200 OK
+
+
+139:CONNECT e.serverbid.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:18 2023
+139:Responding HTTP/1.1 200 OK
+
+
+140:CONNECT www.facebook.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:18 2023
+140:Responding HTTP/1.1 200 OK
+
+
+134:Responding HTTP/1.1 200 OK
+
+
+141:CONNECT b-code.liadm.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:19 2023
+143:CONNECT cdn.parsely.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:19 2023
+142:CONNECT geo.privacymanager.io:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:19 2023
+144:CONNECT cdn.krxd.net:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:19 2023
+145:CONNECT sb.scorecardresearch.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:19 2023
+145:Responding HTTP/1.1 200 OK
+
+
+143:Responding HTTP/1.1 200 OK
+
+
+142:Responding HTTP/1.1 200 OK
+
+
+144:Responding HTTP/1.1 200 OK
+
+
+141:Responding HTTP/1.1 200 OK
+
+
+146:CONNECT stats.g.doubleclick.net:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:19 2023
+147:CONNECT ssc-cms.33across.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:19 2023
+146:Responding HTTP/1.1 200 OK
+
+
+147:Responding HTTP/1.1 200 OK
+
+
+148:CONNECT de.tynt.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:19 2023
+53: from 10.198.96.40@Tue Feb 28 21:56:19 2023
+149:CONNECT rp.liadm.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:19 2023
+149:Responding HTTP/1.1 200 OK
+
+
+148:Responding HTTP/1.1 200 OK
+
+
+150:CONNECT hde.tynt.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:19 2023
+151:CONNECT p1.parsely.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:19 2023
+151:Responding HTTP/1.1 200 OK
+
+
+150:Responding HTTP/1.1 200 OK
+
+
+153:CONNECT sli.usatoday.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:19 2023
+152:CONNECT i.liadm.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:19 2023
+154:CONNECT db51fecf586504f687c9787961fa6dc1.safeframe.googlesyndication.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:19 2023
+152:Responding HTTP/1.1 200 OK
+
+
+154:Responding HTTP/1.1 200 OK
+
+
+153:Responding HTTP/1.1 200 OK
+
+
+155:CONNECT secure-assets.rubiconproject.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:19 2023
+156:CONNECT eb2.3lift.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:20 2023
+157:CONNECT x.bidswitch.net:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:20 2023
+159:CONNECT 33across-match.dotomi.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:20 2023
+158:CONNECT ups.analytics.yahoo.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:20 2023
+160:CONNECT pixel-sync.sitescout.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:20 2023
+165:CONNECT match.adsrvr.org:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:20 2023
+163:CONNECT x.dlx.addthis.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:20 2023
+162:CONNECT trc.taboola.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:20 2023
+161:CONNECT dpm.demdex.net:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:20 2023
+164:CONNECT mid.rkdms.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:20 2023
+166:CONNECT b1sync.zemanta.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:20 2023
+156:Responding HTTP/1.1 200 OK
+
+
+155:Responding HTTP/1.1 200 OK
+
+
+167:CONNECT safebrowsing.googleapis.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:20 2023
+157:Responding HTTP/1.1 200 OK
+
+
+158:Responding HTTP/1.1 200 OK
+
+
+168:CONNECT consumer.krxd.net:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:20 2023
+165:Responding HTTP/1.1 200 OK
+
+
+160:Responding HTTP/1.1 200 OK
+
+
+167:Responding HTTP/1.1 200 OK
+
+
+164:Responding HTTP/1.1 200 OK
+
+
+161:Responding HTTP/1.1 200 OK
+
+
+159:Responding HTTP/1.1 200 OK
+
+
+162:Responding HTTP/1.1 200 OK
+
+
+163:Responding HTTP/1.1 200 OK
+
+
+168:Responding HTTP/1.1 200 OK
+
+
+166:Responding HTTP/1.1 200 OK
+
+
+169:CONNECT sync.mathtag.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:20 2023
+169:Responding HTTP/1.1 200 OK
+
+
+170:CONNECT eus.rubiconproject.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:20 2023
+171:CONNECT rtb.mfadsrvr.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:20 2023
+170:Responding HTTP/1.1 200 OK
+
+
+171:Responding HTTP/1.1 200 OK
+
+
+172:CONNECT events-ssc.33across.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:20 2023
+172:Responding HTTP/1.1 200 OK
+
+
+173:CONNECT stags.bluekai.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:20 2023
+173:Responding HTTP/1.1 200 OK
+
+
+57: from 10.198.96.40@Tue Feb 28 21:56:21 2023
+56: from 10.198.96.40@Tue Feb 28 21:56:21 2023
+174:CONNECT sync.1rx.io:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:21 2023
+175:CONNECT safebrowsing.googleapis.com:443 HTTP/1.1 from 10.198.96.40@Tue Feb 28 21:56:21 2023
+174:Responding HTTP/1.1 200 OK
+
+
+175:Responding HTTP/1.1 200 OK
+
+
+59: from 10.198.96.40@Tue Feb 28 21:56:21 2023
+133: from 10.198.96.40@Tue Feb 28 21:56:23 2023
