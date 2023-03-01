@@ -1,0 +1,10 @@
+danger log
+
+1. [Problem occured] when we tried to open the page http://www.httpwatch.com/httpgallery/methods/ the second time, which should be using cache, and the page could not be loaded correctly.
+ [Solution] We debugged the program and found the error was that we had mistakenly stored the whole response instead of the first line of the response in the cache map. After we fixed this bug, no matter how many times this page is displayed correctly.
+
+2. We used this link: http://www.httpwatch.com/httpgallery/methods/ to test both the get and post requests. When testing get requests, sometimes the page is displayed very quickly, but sometimes the page takes a long time (about 1 or 2 minutes) to load, and we didn't find the reason. When testing post requests, this page also takes a long time to load (probably more than a minute) to complete the post and display the results of the post.
+
+3. We sometimes found that when receiving the first request, the length of the received request will be 0, which seems to be an error but does not affect the running of the program. So we handled the exception by setting only when len=-1 as an error and len = 0 as not an error.
+
+

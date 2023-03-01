@@ -135,7 +135,7 @@ void handle_connect(int id, int server_fd, int client_fd) {
       }
     }
   }
-  make_log(id, " Tunnel closed");
+  
   
 }
 
@@ -184,6 +184,8 @@ void * handle(void * data_) {
   if (request_obj.method == "CONNECT") {
 
     handle_connect(data -> id, client.socket_fd, data -> fd);
+    make_log(data -> id, " Tunnel closed");
+    //cout<<"[yes] tunnel close!"<<endl;
 
   } else if (request_obj.method == "GET") {
 

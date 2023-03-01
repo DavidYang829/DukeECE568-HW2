@@ -20,6 +20,50 @@ https://people.duke.edu/~bmr23/ece568/slides/ERSS_08_Crypto.pdf
 1:CONNECT people.duke.edu:443 HTTP/1.1 from 10.197.135.154@Tue Feb 28 16:13:57 2023
 1:Responding HTTP/1.1 200 OK
 
+https://www.google.com/
+
+0:CONNECT contile-images.services.mozilla.com:443 HTTP/1.1 from 98.26.99.81@Tue Feb 28 21:33:12 2023
+0:Responding HTTP/1.1 200 OK
+
+
+1:CONNECT www.google.com:443 HTTP/1.1 from 98.26.99.81@Tue Feb 28 21:33:17 2023
+1:Responding HTTP/1.1 200 OK
+
+
+3:CONNECT adservice.google.com:443 HTTP/1.1 from 98.26.99.81@Tue Feb 28 21:33:17 2023
+3:Responding HTTP/1.1 200 OK
+
+
+4:CONNECT googleads.g.doubleclick.net:443 HTTP/1.1 from 98.26.99.81@Tue Feb 28 21:33:17 2023
+4:Responding HTTP/1.1 200 OK
+
+
+2: from 98.26.99.81@Tue Feb 28 21:33:23 2023
+5:CONNECT lens.google.com:443 HTTP/1.1 from 98.26.99.81@Tue Feb 28 21:33:34 2023
+5:Responding HTTP/1.1 200 OK
+
+
+6:POST http://ocsp.pki.goog/gts1c3 HTTP/1.1 from 98.26.99.81@Tue Feb 28 21:33:34 2023
+6:HTTP/1.1 200 OK
+Content-Type: application/ocsp-response
+Date: Wed, 01 Mar 2023 02:33:34 GMT
+Cache-Control: public, max-age=14400
+Server: ocsp_responder
+Content-Length: 472
+X-XSS-Protection: 0
+X-Frame-Options: SAMEORIGIN
+
+0��
+
+6:Received HTTP/1.1 200 OK from ocsp.pki.goog
+0: Tunnel closed
+3: Tunnel closed
+4: Tunnel closed
+7:CONNECT spocs.getpocket.com:443 HTTP/1.1 from 98.26.99.81@Tue Feb 28 21:36:15 2023
+7:Responding HTTP/1.1 200 OK
+
+
+5: Tunnel closed
 _________________________________________________
 *************************************************
 GET
