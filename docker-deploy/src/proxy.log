@@ -77,3 +77,48 @@ Connection: keep-alive
 
 
 12: Tunnel closed
+13:CONNECT contile.services.mozilla.com:443 HTTP/1.1 from 98.26.99.81@Tue Feb 28 22:11:15 2023
+14:CONNECT spocs.getpocket.com:443 HTTP/1.1 from 98.26.99.81@Tue Feb 28 22:11:15 2023
+13:Responding HTTP/1.1 200 OK
+
+
+14:Responding HTTP/1.1 200 OK
+
+
+15:POST http://r3.o.lencr.org/ HTTP/1.1 from 98.26.99.81@Tue Feb 28 22:11:16 2023
+14: Tunnel closed
+13: Tunnel closed
+16:CONNECT incoming.telemetry.mozilla.org:443 HTTP/1.1 from 98.26.99.81@Tue Feb 28 22:18:09 2023
+16:Responding HTTP/1.1 200 OK
+
+
+15:HTTP/1.1 200 OK
+Server: nginx
+Content-Type: application/ocsp-response
+Content-Length: 503
+ETag: "4B69973AF6E9C5A78D94E8661B08D9349176A515E7BFB3386B10ACE4C6F1AE21"
+Last-Modified: Tue, 28 Feb 2023 02:00:00 UTC
+Cache-Control: public, no-transform, must-revalidate, max-age=10628
+Expires: Wed, 01 Mar 2023 06:08:24 GMT
+Date: Wed, 01 Mar 2023 03:11:16 GMT
+Connection: keep-alive
+
+0‚ó
+
+15:Received HTTP/1.1 200 OK from r3.o.lencr.org
+17:CONNECT www.google.com:443 HTTP/1.1 from 98.26.99.81@Tue Feb 28 22:20:29 2023
+17:Responding HTTP/1.1 200 OK
+
+
+18:CONNECT www.google.com:443 HTTP/1.1 from 98.26.99.81@Tue Feb 28 22:20:32 2023
+18:Responding HTTP/1.1 200 OK
+
+
+19:GET http://httpbin.org/forms/post HTTP/1.1 from 98.26.99.81@Tue Feb 28 22:20:38 2023
+19:not in cache
+19:Requesting GET http://httpbin.org/forms/post HTTP/1.1 from httpbin.org
+19:Received HTTP/1.1 200 OK from httpbin.org
+19:not cacheable because: Cache-control is no-store
+16: Tunnel closed
+18: Tunnel closed
+17: Tunnel closed

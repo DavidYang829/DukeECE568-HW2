@@ -7,4 +7,4 @@ danger log
 
 3. We sometimes found that when receiving the first request, the length of the received request will be 0, which seems to be an error but does not affect the running of the program. So we handled the exception by setting only when len=-1 as an error and len = 0 as not an error.
 
-
+4. We have observed that the website http://httpbin.org/forms/post, which we use to test the POST method, is intermittently returning a 504 Bad Gateway error during daytime when it is frequently visited. However, the error does not occur during other time periods, indicating that our proxy program is functioning correctly. This inconsistency is affecting our ability to properly test different versions of our proxy.
